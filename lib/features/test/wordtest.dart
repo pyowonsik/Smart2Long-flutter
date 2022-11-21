@@ -63,10 +63,8 @@ class _WordTestState extends State<WordTestPage> {
       final prefs = await SharedPreferences.getInstance();
       prefs.setString('class', begginer);
       print('test');
-      GoRouter.of(context).go('/test');
-    }
-    if (res.statusCode == 400) {
-      GoRouter.of(context).go('/ebook');
+      // GoRouter.of(context).go('/test');
+      Navigator.pushNamed(context, '/wordtrytest');
     }
   }
 
@@ -88,7 +86,7 @@ class _WordTestState extends State<WordTestPage> {
       final prefs = await SharedPreferences.getInstance();
       prefs.setString('class', middler);
       print('test');
-      GoRouter.of(context).go('/test');
+      Navigator.pushNamed(context, '/wordtrytest');
     }
     if (res.statusCode == 400) {
       GoRouter.of(context).go('/ebook');
@@ -113,7 +111,7 @@ class _WordTestState extends State<WordTestPage> {
       final prefs = await SharedPreferences.getInstance();
       prefs.setString('class', higher);
       print('test');
-      GoRouter.of(context).go('/test');
+      Navigator.pushNamed(context, '/wordtrytest');
     }
     if (res.statusCode == 400) {
       GoRouter.of(context).go('/ebook');
@@ -138,7 +136,7 @@ class _WordTestState extends State<WordTestPage> {
       final prefs = await SharedPreferences.getInstance();
       prefs.setString('class', toiecer);
       print('test');
-      GoRouter.of(context).go('/test');
+      Navigator.pushNamed(context, '/wordtrytest');
     }
     if (res.statusCode == 400) {
       GoRouter.of(context).go('/ebook');

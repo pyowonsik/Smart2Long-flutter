@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
-import 'package:go_router/go_router.dart';
-import 'package:riverpod/riverpod.dart';
 import 'package:http/http.dart' as http;
 import 'package:s2longapp/common/CommonAppBar.dart';
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:developer';
+import 'package:s2longapp/features/navi/menu.dart';
 
 String finalEmail = '';
 String finalRe = '';
@@ -67,17 +66,11 @@ class _MainappPageState extends State<MainappPage> {
   final FlutterTts tts = FlutterTts();
   final TextEditingController controller = TextEditingController(text: '');
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: null,
-      // drawer: MenuBar(),
+      drawer: MenuBar(),
       body: IndexedStack(
         index: _selectedIndex,
         children: [
@@ -401,10 +394,8 @@ class _MainappPageState extends State<MainappPage> {
                                     Container(
                                       child: IconButton(
                                           onPressed: () {
-                                            // setState(() {
-                                            //   _selectedIndex = 3;
-                                            // });
-                                            GoRouter.of(context).go('/estore');
+                                            Navigator.pushNamed(
+                                                context, '/wordbook');
                                           },
                                           icon: Image.asset(
                                               'assets/iconChevronR.png')),
@@ -431,7 +422,8 @@ class _MainappPageState extends State<MainappPage> {
                                   //   ),
                                   // ),
                                   onPressed: () {
-                                    GoRouter.of(context).go('/wtest');
+                                    Navigator.pushNamed(
+                                        context, '/wordbooktest');
                                   },
                                   child: Text(
                                     '오답 시험',

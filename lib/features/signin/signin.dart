@@ -238,10 +238,8 @@ class SignInForm2State extends ConsumerState<SignInForm2> {
 
     if (res.statusCode == 200) {
       print('test');
-
       final prefs = await SharedPreferences.getInstance();
       prefs.setString('email', email);
-
       prefs.setString('sclass', '최초접속!!');
       prefs.setString('class', '최초접속!!');
       // print(prefs.getString('email'));

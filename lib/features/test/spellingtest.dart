@@ -65,7 +65,7 @@ class _SpellingTest extends State<SpellingTest> {
       final prefs = await SharedPreferences.getInstance();
       prefs.setString('sclass', begginer);
       print('test');
-      GoRouter.of(context).go('/stest');
+      Navigator.popAndPushNamed(context, '/spellingtrytest');
     }
     if (res.statusCode == 400) {
       GoRouter.of(context).go('/sbook');
@@ -90,7 +90,8 @@ class _SpellingTest extends State<SpellingTest> {
       final prefs = await SharedPreferences.getInstance();
       prefs.setString('sclass', middler);
       print('test');
-      GoRouter.of(context).go('/stest');
+      // GoRouter.of(context).go('/stest');
+      Navigator.popAndPushNamed(context, '/spellingtrytest');
     }
     if (res.statusCode == 400) {
       GoRouter.of(context).go('/sbook');
@@ -115,7 +116,7 @@ class _SpellingTest extends State<SpellingTest> {
       final prefs = await SharedPreferences.getInstance();
       prefs.setString('sclass', higher);
       print('test');
-      GoRouter.of(context).go('/stest');
+      Navigator.popAndPushNamed(context, '/spellingtrytest');
     }
     if (res.statusCode == 400) {
       GoRouter.of(context).go('/sbook');
@@ -123,7 +124,7 @@ class _SpellingTest extends State<SpellingTest> {
   }
 
   void sendToiecer() async {
-    var url = Uri.parse("http://${baseApiUrl}0/trytest");
+    var url = Uri.parse("http://${baseApiUrl}/trytest");
     var tryData = {
       "tryclass": toiecer,
     };
@@ -140,7 +141,7 @@ class _SpellingTest extends State<SpellingTest> {
       final prefs = await SharedPreferences.getInstance();
       prefs.setString('sclass', toiecer);
       print('test');
-      GoRouter.of(context).go('/stest');
+      Navigator.popAndPushNamed(context, '/spellingtrytest');
     }
     if (res.statusCode == 400) {
       GoRouter.of(context).go('/sbook');
