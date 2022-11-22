@@ -347,7 +347,7 @@ class _ListenPageState extends State<ListenPage> {
                     ],
                   ),
                   Container(
-                    margin: EdgeInsets.fromLTRB(0, 80, 0, 0),
+                    margin: EdgeInsets.fromLTRB(0, 40, 0, 0),
                   ),
                   // TextField(
                   //   controller: controller,
@@ -359,7 +359,7 @@ class _ListenPageState extends State<ListenPage> {
                       Text(
                         "Word : " + finalWord,
                         style: TextStyle(
-                          fontSize: 30,
+                          fontSize: 25,
                           fontWeight: FontWeight.bold,
                           color: Color.fromRGBO(56, 8, 135, 1.0),
                         ),
@@ -370,7 +370,7 @@ class _ListenPageState extends State<ListenPage> {
                       Text(
                         "Mean : " + finalMean,
                         style: TextStyle(
-                          fontSize: 30,
+                          fontSize: 25,
                           fontWeight: FontWeight.bold,
                           color: Color.fromRGBO(56, 8, 135, 1.0),
                         ),
