@@ -310,7 +310,6 @@ class _MainAppPage extends State<MainAppPage> {
                                 ),
                               ),
                               Container(
-                                margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
                                 height: 150,
                                 child: Column(
                                   children: [
@@ -329,7 +328,7 @@ class _MainAppPage extends State<MainAppPage> {
                                     ),
                                     Container(
                                       margin:
-                                          EdgeInsets.fromLTRB(10, 30, 10, 10),
+                                          EdgeInsets.fromLTRB(10, 10, 10, 10),
                                     ),
                                     ElevatedButton(
                                         style: ElevatedButton.styleFrom(
@@ -337,18 +336,6 @@ class _MainAppPage extends State<MainAppPage> {
                                               Color.fromRGBO(56, 8, 135, 1.0),
                                           minimumSize: Size(200, 40),
                                         ),
-                                        // style: ButtonStyle(
-                                        //   foregroundColor:
-                                        //       MaterialStateProperty.all<
-                                        //           Color>(
-                                        //     Color.fromRGBO(56, 8, 135, 1.0),
-                                        //   ),
-                                        //   backgroundColor:
-                                        //       MaterialStateProperty.all<
-                                        //           Color>(
-                                        //     Color.fromRGBO(56, 8, 135, 1.0),
-                                        //   ),
-                                        // ),
                                         onPressed: () {
                                           tts.speak(controller.text);
                                           controller.clear();

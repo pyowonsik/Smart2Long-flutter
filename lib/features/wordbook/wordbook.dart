@@ -171,7 +171,7 @@ void showEx(BuildContext context) {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Image.asset('iconHelpCopy2.png'),
+                    Image.asset('assets/iconHelpCopy2.png'),
                     Container(margin: EdgeInsets.fromLTRB(8, 0, 0, 0)),
                     Text('예문',
                         style: TextStyle(
@@ -188,7 +188,7 @@ void showEx(BuildContext context) {
                         onPressed: () {
                           Navigator.of(context).pop();
                         },
-                        icon: Image.asset('close.png')),
+                        icon: Image.asset('assets/close.png')),
                   ],
                 ),
               ],
@@ -217,8 +217,8 @@ void showEx(BuildContext context) {
                 children: [
                   Container(
                     constraints: BoxConstraints(
-                      minWidth: 318,
-                      minHeight: 54,
+                      minWidth: 200,
+                      minHeight: 50,
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(8)),

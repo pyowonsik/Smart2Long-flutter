@@ -216,7 +216,7 @@ class _ListenPageState extends State<ListenPage> {
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             primary: Color.fromRGBO(56, 8, 135, 1.0),
-                            minimumSize: Size(200, 70),
+                            minimumSize: Size(100, 50),
                           ),
                           onPressed: () async {
                             var url = Uri.parse(
@@ -250,7 +250,7 @@ class _ListenPageState extends State<ListenPage> {
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             primary: Color.fromRGBO(56, 8, 135, 1.0),
-                            minimumSize: Size(200, 70),
+                            minimumSize: Size(100, 50),
                           ),
                           onPressed: () async {
                             var url = Uri.parse(
@@ -282,7 +282,7 @@ class _ListenPageState extends State<ListenPage> {
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             primary: Color.fromRGBO(56, 8, 135, 1.0),
-                            minimumSize: Size(200, 70),
+                            minimumSize: Size(100, 50),
                           ),
                           onPressed: () async {
                             var url = Uri.parse(
@@ -316,7 +316,7 @@ class _ListenPageState extends State<ListenPage> {
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             primary: Color.fromRGBO(56, 8, 135, 1.0),
-                            minimumSize: Size(200, 70),
+                            minimumSize: Size(100, 50),
                           ),
                           onPressed: () async {
                             var url = Uri.parse(
