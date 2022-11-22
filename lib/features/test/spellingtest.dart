@@ -233,7 +233,7 @@ class _SpellingTest extends State<SpellingTest> {
                           '(스펠링 시험) 시험 수준을 선택하세요',
                           style: TextStyle(
                               color: Color.fromRGBO(56, 8, 135, 1.0),
-                              fontSize: 25,
+                              fontSize: 20,
                               fontWeight: FontWeight.bold),
                         ),
                       ],
@@ -256,124 +256,52 @@ class _SpellingTest extends State<SpellingTest> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Row(
-                                  children: [
-                                    Container(
-                                      padding:
-                                          EdgeInsets.fromLTRB(12, 12, 20, 12),
-                                      child: Image(
-                                          image:
-                                              AssetImage("assets/layer14.png")),
+                                Row(children: [
+                                  Container(
+                                    padding:
+                                        EdgeInsets.fromLTRB(12, 12, 20, 12),
+                                    child: Image(
+                                        image:
+                                            AssetImage("assets/layer14.png")),
+                                  ),
+                                  Container(
+                                    width: 200,
+                                    child: Text(
+                                      begginer +
+                                          "  (총 단어 개수 : " +
+                                          begginerwordnum +
+                                          ")",
+                                      style: TextStyle(
+                                          color:
+                                              Color.fromRGBO(46, 10, 106, 1.0),
+                                          fontSize: 15,
+                                          letterSpacing: -0.4,
+                                          fontWeight: FontWeight.bold),
                                     ),
-                                    Container(
-                                      child: Row(
-                                        children: [
-                                          Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            children: [
-                                              Container(
-                                                width: 400,
-                                                child: Text(
-                                                  begginer +
-                                                      "  (총 단어 개수 : " +
-                                                      begginerwordnum +
-                                                      ")",
-                                                  style: TextStyle(
-                                                      color: Color.fromRGBO(
-                                                          46, 10, 106, 1.0),
-                                                      fontSize: 20,
-                                                      letterSpacing: -0.4,
-                                                      fontWeight:
-                                                          FontWeight.bold),
-                                                ),
-                                              ),
-                                              Container(
-                                                height: 1,
-                                                margin: EdgeInsets.fromLTRB(
-                                                    0, 5, 0, 7),
-                                                color: Color.fromRGBO(
-                                                    255, 255, 255, 1.0),
-                                              ),
-                                            ],
-                                          )
-                                        ],
+                                  ),
+                                  Container(
+                                    width: 28,
+                                    height: 28,
+                                    decoration: BoxDecoration(
+                                        color:
+                                            Color.fromRGBO(255, 255, 255, 1.0),
+                                        borderRadius: BorderRadius.circular(7)),
+                                    child: IconButton(
+                                      iconSize: 16,
+                                      icon: Image.asset(
+                                        'assets/triangle1694.png',
+                                        color: Color.fromRGBO(56, 8, 135, 1.0),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                                Container(
-                                  padding: EdgeInsets.fromLTRB(20, 10, 8, 10),
-                                  height: 108,
-                                  decoration: BoxDecoration(
-                                    color: Color(0xffe5e7e9),
-                                    borderRadius: BorderRadius.circular(12),
-                                  ),
-                                  child: Container(
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.end,
-                                      children: [
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.end,
-                                          children: [
-                                            Row(
-                                              children: [
-                                                Container(
-                                                  width: 28,
-                                                  height: 28,
-                                                  decoration: BoxDecoration(
-                                                      color: Color.fromRGBO(
-                                                          255, 255, 255, 1.0),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              7)),
-                                                  child: IconButton(
-                                                    iconSize: 16,
-                                                    icon: Image.asset(
-                                                      'triangle1694.png',
-                                                      color: Color.fromRGBO(
-                                                          56, 8, 135, 1.0),
-                                                    ),
-                                                    onPressed: () {
-                                                      sendBegginer();
-                                                    },
-                                                  ),
-                                                ),
-                                                Container(
-                                                  width: 28,
-                                                  height: 28,
-                                                  margin: EdgeInsets.fromLTRB(
-                                                      10, 0, 0, 0),
-                                                  decoration: BoxDecoration(
-                                                      color: Color.fromRGBO(
-                                                          255, 255, 255, 1.0),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              7)),
-                                                  child: IconButton(
-                                                    iconSize: 16,
-                                                    icon: Image.asset(
-                                                      'assets/ellipse2.png',
-                                                      color: Color.fromRGBO(
-                                                          56, 8, 135, 1.0),
-                                                    ),
-                                                    onPressed: () {},
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                      ],
+                                      onPressed: () {
+                                        sendBegginer();
+                                      },
                                     ),
                                   ),
-                                )
+                                ]),
                               ],
                             )),
                         Container(
-                            margin: EdgeInsets.fromLTRB(0, 30, 0, 0),
+                            margin: EdgeInsets.fromLTRB(0, 12, 0, 0),
                             decoration: BoxDecoration(
                               color: Color(0xffe5e7e9),
                               borderRadius: BorderRadius.circular(12),
@@ -382,124 +310,52 @@ class _SpellingTest extends State<SpellingTest> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Row(
-                                  children: [
-                                    Container(
-                                      padding:
-                                          EdgeInsets.fromLTRB(12, 12, 20, 12),
-                                      child: Image(
-                                          image:
-                                              AssetImage("assets/layer14.png")),
+                                Row(children: [
+                                  Container(
+                                    padding:
+                                        EdgeInsets.fromLTRB(12, 12, 20, 12),
+                                    child: Image(
+                                        image:
+                                            AssetImage("assets/layer14.png")),
+                                  ),
+                                  Container(
+                                    width: 200,
+                                    child: Text(
+                                      middler +
+                                          "  (총 단어 개수 : " +
+                                          middlerwordnum +
+                                          ")",
+                                      style: TextStyle(
+                                          color:
+                                              Color.fromRGBO(46, 10, 106, 1.0),
+                                          fontSize: 15,
+                                          letterSpacing: -0.4,
+                                          fontWeight: FontWeight.bold),
                                     ),
-                                    Container(
-                                      child: Row(
-                                        children: [
-                                          Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            children: [
-                                              Container(
-                                                width: 400,
-                                                child: Text(
-                                                  middler +
-                                                      "  (총 단어 개수 : " +
-                                                      middlerwordnum +
-                                                      ")",
-                                                  style: TextStyle(
-                                                      color: Color.fromRGBO(
-                                                          46, 10, 106, 1.0),
-                                                      fontSize: 20,
-                                                      letterSpacing: -0.4,
-                                                      fontWeight:
-                                                          FontWeight.bold),
-                                                ),
-                                              ),
-                                              Container(
-                                                height: 1,
-                                                margin: EdgeInsets.fromLTRB(
-                                                    0, 5, 0, 7),
-                                                color: Color.fromRGBO(
-                                                    255, 255, 255, 1.0),
-                                              ),
-                                            ],
-                                          )
-                                        ],
+                                  ),
+                                  Container(
+                                    width: 28,
+                                    height: 28,
+                                    decoration: BoxDecoration(
+                                        color:
+                                            Color.fromRGBO(255, 255, 255, 1.0),
+                                        borderRadius: BorderRadius.circular(7)),
+                                    child: IconButton(
+                                      iconSize: 16,
+                                      icon: Image.asset(
+                                        'assets/triangle1694.png',
+                                        color: Color.fromRGBO(56, 8, 135, 1.0),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                                Container(
-                                  padding: EdgeInsets.fromLTRB(20, 10, 8, 10),
-                                  height: 108,
-                                  decoration: BoxDecoration(
-                                    color: Color(0xffe5e7e9),
-                                    borderRadius: BorderRadius.circular(12),
-                                  ),
-                                  child: Container(
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.end,
-                                      children: [
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.end,
-                                          children: [
-                                            Row(
-                                              children: [
-                                                Container(
-                                                  width: 28,
-                                                  height: 28,
-                                                  decoration: BoxDecoration(
-                                                      color: Color.fromRGBO(
-                                                          255, 255, 255, 1.0),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              7)),
-                                                  child: IconButton(
-                                                    iconSize: 16,
-                                                    icon: Image.asset(
-                                                      'triangle1694.png',
-                                                      color: Color.fromRGBO(
-                                                          56, 8, 135, 1.0),
-                                                    ),
-                                                    onPressed: () {
-                                                      sendMiddler();
-                                                    },
-                                                  ),
-                                                ),
-                                                Container(
-                                                  width: 28,
-                                                  height: 28,
-                                                  margin: EdgeInsets.fromLTRB(
-                                                      10, 0, 0, 0),
-                                                  decoration: BoxDecoration(
-                                                      color: Color.fromRGBO(
-                                                          255, 255, 255, 1.0),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              7)),
-                                                  child: IconButton(
-                                                    iconSize: 16,
-                                                    icon: Image.asset(
-                                                      'assets/ellipse2.png',
-                                                      color: Color.fromRGBO(
-                                                          56, 8, 135, 1.0),
-                                                    ),
-                                                    onPressed: () {},
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                      ],
+                                      onPressed: () {
+                                        sendMiddler();
+                                      },
                                     ),
                                   ),
-                                )
+                                ]),
                               ],
                             )),
                         Container(
-                            margin: EdgeInsets.fromLTRB(0, 30, 0, 0),
+                            margin: EdgeInsets.fromLTRB(0, 12, 0, 0),
                             decoration: BoxDecoration(
                               color: Color(0xffe5e7e9),
                               borderRadius: BorderRadius.circular(12),
@@ -508,124 +364,52 @@ class _SpellingTest extends State<SpellingTest> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Row(
-                                  children: [
-                                    Container(
-                                      padding:
-                                          EdgeInsets.fromLTRB(12, 12, 20, 12),
-                                      child: Image(
-                                          image:
-                                              AssetImage("assets/layer14.png")),
+                                Row(children: [
+                                  Container(
+                                    padding:
+                                        EdgeInsets.fromLTRB(12, 12, 20, 12),
+                                    child: Image(
+                                        image:
+                                            AssetImage("assets/layer14.png")),
+                                  ),
+                                  Container(
+                                    width: 200,
+                                    child: Text(
+                                      higher +
+                                          "  (총 단어 개수 : " +
+                                          higherwordnum +
+                                          ")",
+                                      style: TextStyle(
+                                          color:
+                                              Color.fromRGBO(46, 10, 106, 1.0),
+                                          fontSize: 15,
+                                          letterSpacing: -0.4,
+                                          fontWeight: FontWeight.bold),
                                     ),
-                                    Container(
-                                      child: Row(
-                                        children: [
-                                          Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            children: [
-                                              Container(
-                                                width: 400,
-                                                child: Text(
-                                                  higher +
-                                                      "  (총 단어 개수 : " +
-                                                      higherwordnum +
-                                                      ")",
-                                                  style: TextStyle(
-                                                      color: Color.fromRGBO(
-                                                          46, 10, 106, 1.0),
-                                                      fontSize: 20,
-                                                      letterSpacing: -0.4,
-                                                      fontWeight:
-                                                          FontWeight.bold),
-                                                ),
-                                              ),
-                                              Container(
-                                                height: 1,
-                                                margin: EdgeInsets.fromLTRB(
-                                                    0, 5, 0, 7),
-                                                color: Color.fromRGBO(
-                                                    255, 255, 255, 1.0),
-                                              ),
-                                            ],
-                                          )
-                                        ],
+                                  ),
+                                  Container(
+                                    width: 28,
+                                    height: 28,
+                                    decoration: BoxDecoration(
+                                        color:
+                                            Color.fromRGBO(255, 255, 255, 1.0),
+                                        borderRadius: BorderRadius.circular(7)),
+                                    child: IconButton(
+                                      iconSize: 16,
+                                      icon: Image.asset(
+                                        'assets/triangle1694.png',
+                                        color: Color.fromRGBO(56, 8, 135, 1.0),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                                Container(
-                                  padding: EdgeInsets.fromLTRB(20, 10, 8, 10),
-                                  height: 108,
-                                  decoration: BoxDecoration(
-                                    color: Color(0xffe5e7e9),
-                                    borderRadius: BorderRadius.circular(12),
-                                  ),
-                                  child: Container(
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.end,
-                                      children: [
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.end,
-                                          children: [
-                                            Row(
-                                              children: [
-                                                Container(
-                                                  width: 28,
-                                                  height: 28,
-                                                  decoration: BoxDecoration(
-                                                      color: Color.fromRGBO(
-                                                          255, 255, 255, 1.0),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              7)),
-                                                  child: IconButton(
-                                                    iconSize: 16,
-                                                    icon: Image.asset(
-                                                      'triangle1694.png',
-                                                      color: Color.fromRGBO(
-                                                          56, 8, 135, 1.0),
-                                                    ),
-                                                    onPressed: () {
-                                                      sendHigher();
-                                                    },
-                                                  ),
-                                                ),
-                                                Container(
-                                                  width: 28,
-                                                  height: 28,
-                                                  margin: EdgeInsets.fromLTRB(
-                                                      10, 0, 0, 0),
-                                                  decoration: BoxDecoration(
-                                                      color: Color.fromRGBO(
-                                                          255, 255, 255, 1.0),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              7)),
-                                                  child: IconButton(
-                                                    iconSize: 16,
-                                                    icon: Image.asset(
-                                                      'assets/ellipse2.png',
-                                                      color: Color.fromRGBO(
-                                                          56, 8, 135, 1.0),
-                                                    ),
-                                                    onPressed: () {},
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                      ],
+                                      onPressed: () {
+                                        sendHigher();
+                                      },
                                     ),
                                   ),
-                                )
+                                ]),
                               ],
                             )),
                         Container(
-                            margin: EdgeInsets.fromLTRB(0, 30, 0, 0),
+                            margin: EdgeInsets.fromLTRB(0, 12, 0, 0),
                             decoration: BoxDecoration(
                               color: Color(0xffe5e7e9),
                               borderRadius: BorderRadius.circular(12),
@@ -634,124 +418,52 @@ class _SpellingTest extends State<SpellingTest> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Row(
-                                  children: [
-                                    Container(
-                                      padding:
-                                          EdgeInsets.fromLTRB(12, 12, 20, 12),
-                                      child: Image(
-                                          image:
-                                              AssetImage("assets/layer14.png")),
+                                Row(children: [
+                                  Container(
+                                    padding:
+                                        EdgeInsets.fromLTRB(12, 12, 20, 12),
+                                    child: Image(
+                                        image:
+                                            AssetImage("assets/layer14.png")),
+                                  ),
+                                  Container(
+                                    width: 200,
+                                    child: Text(
+                                      toiecer +
+                                          "  (총 단어 개수 : " +
+                                          toiecerwordnum +
+                                          ")",
+                                      style: TextStyle(
+                                          color:
+                                              Color.fromRGBO(46, 10, 106, 1.0),
+                                          fontSize: 15,
+                                          letterSpacing: -0.4,
+                                          fontWeight: FontWeight.bold),
                                     ),
-                                    Container(
-                                      child: Row(
-                                        children: [
-                                          Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            children: [
-                                              Container(
-                                                width: 400,
-                                                child: Text(
-                                                  toiecer +
-                                                      "  (총 단어 개수 : " +
-                                                      toiecerwordnum +
-                                                      ")",
-                                                  style: TextStyle(
-                                                      color: Color.fromRGBO(
-                                                          46, 10, 106, 1.0),
-                                                      fontSize: 20,
-                                                      letterSpacing: -0.4,
-                                                      fontWeight:
-                                                          FontWeight.bold),
-                                                ),
-                                              ),
-                                              Container(
-                                                height: 1,
-                                                margin: EdgeInsets.fromLTRB(
-                                                    0, 5, 0, 7),
-                                                color: Color.fromRGBO(
-                                                    255, 255, 255, 1.0),
-                                              ),
-                                            ],
-                                          )
-                                        ],
+                                  ),
+                                  Container(
+                                    width: 28,
+                                    height: 28,
+                                    decoration: BoxDecoration(
+                                        color:
+                                            Color.fromRGBO(255, 255, 255, 1.0),
+                                        borderRadius: BorderRadius.circular(7)),
+                                    child: IconButton(
+                                      iconSize: 16,
+                                      icon: Image.asset(
+                                        'assets/triangle1694.png',
+                                        color: Color.fromRGBO(56, 8, 135, 1.0),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                                Container(
-                                  padding: EdgeInsets.fromLTRB(20, 10, 8, 10),
-                                  height: 108,
-                                  decoration: BoxDecoration(
-                                    color: Color(0xffe5e7e9),
-                                    borderRadius: BorderRadius.circular(12),
-                                  ),
-                                  child: Container(
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.end,
-                                      children: [
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.end,
-                                          children: [
-                                            Row(
-                                              children: [
-                                                Container(
-                                                  width: 28,
-                                                  height: 28,
-                                                  decoration: BoxDecoration(
-                                                      color: Color.fromRGBO(
-                                                          255, 255, 255, 1.0),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              7)),
-                                                  child: IconButton(
-                                                    iconSize: 16,
-                                                    icon: Image.asset(
-                                                      'triangle1694.png',
-                                                      color: Color.fromRGBO(
-                                                          56, 8, 135, 1.0),
-                                                    ),
-                                                    onPressed: () {
-                                                      sendToiecer();
-                                                    },
-                                                  ),
-                                                ),
-                                                Container(
-                                                  width: 28,
-                                                  height: 28,
-                                                  margin: EdgeInsets.fromLTRB(
-                                                      10, 0, 0, 0),
-                                                  decoration: BoxDecoration(
-                                                      color: Color.fromRGBO(
-                                                          255, 255, 255, 1.0),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              7)),
-                                                  child: IconButton(
-                                                    iconSize: 16,
-                                                    icon: Image.asset(
-                                                      'assets/ellipse2.png',
-                                                      color: Color.fromRGBO(
-                                                          56, 8, 135, 1.0),
-                                                    ),
-                                                    onPressed: () {},
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                      ],
+                                      onPressed: () {
+                                        sendToiecer();
+                                      },
                                     ),
                                   ),
-                                )
+                                ]),
                               ],
                             )),
                       ],
-                    )
+                    ),
                   ],
                 ),
               ],

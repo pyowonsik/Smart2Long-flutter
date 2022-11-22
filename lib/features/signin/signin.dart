@@ -166,7 +166,8 @@ class SignInPage extends StatelessWidget {
                       IconButton(
                         icon: Image.asset('assets/iconChevronRCopy3.png'),
                         onPressed: () {
-                          GoRouter.of(context).push('/signup');
+                          // GoRouter.of(context).push('/signup');
+                          Navigator.pushNamed(context, '/signup');
                           print("siginup test");
                         },
                       )

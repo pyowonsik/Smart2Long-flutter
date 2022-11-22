@@ -197,7 +197,8 @@ class _MenuBarState extends State<MenuBar> {
                     ),
                   ),
                   onPressed: () async {
-                    GoRouter.of(context).push('/');
+                    // GoRouter.of(context).push('/');
+                    Navigator.pushNamed(context, '/');
                     final SharedPreferences prefs =
                         await SharedPreferences.getInstance();
 

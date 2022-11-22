@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:s2longapp/features/listen/listen.dart';
 import 'package:s2longapp/features/main/mainapp.dart';
 import 'package:s2longapp/features/signin/signin.dart';
+import 'package:s2longapp/features/signup/signup.dart';
 import 'package:s2longapp/features/test/spellingtest.dart';
 import 'package:s2longapp/features/test/spellingtrytest.dart';
 import 'package:s2longapp/features/test/wordtest.dart';
@@ -19,6 +20,7 @@ final router = {
   '/wordbooktest': (BuildContext context) => WordBookTestPage(),
   '/wordtrytest': (BuildContext context) => WordTryTest(),
   '/spellingtrytest': (BuildContext context) => SpellingTryTest(),
+  '/signup': (BuildContext context) => SignUpPage(),
 
   // '/findid': (BuildContext context) => FindIDPage(),
   // '/findpw': (BuildContext context) => FindPwPage(),

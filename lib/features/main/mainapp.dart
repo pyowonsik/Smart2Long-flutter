@@ -409,6 +409,36 @@ class _MainAppPage extends State<MainAppPage> {
                                   ],
                                 ),
                               ),
+
+                              ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    primary: Color.fromRGBO(56, 8, 135, 1.0),
+                                    minimumSize: Size(200, 40),
+                                  ),
+                                  // style: ButtonStyle(
+                                  //   foregroundColor:
+                                  //       MaterialStateProperty.all<
+                                  //           Color>(
+                                  //     Color.fromRGBO(56, 8, 135, 1.0),
+                                  //   ),
+                                  //   backgroundColor:
+                                  //       MaterialStateProperty.all<
+                                  //           Color>(
+                                  //     Color.fromRGBO(56, 8, 135, 1.0),
+                                  //   ),
+                                  // ),
+                                  onPressed: () {
+                                    Navigator.pushNamed(
+                                        context, '/wordbooktest');
+                                  },
+                                  child: Text(
+                                    '오답 시험',
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                      color: Color.fromRGBO(255, 255, 255, 1.0),
+                                    ),
+                                  ))
                               // CommonMdeckCard(text: "영어독립 365영어독립 365..."),
                             ],
                           )),
@@ -458,7 +488,7 @@ void showEx(BuildContext context) {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Image.asset('iconHelpCopy2.png'),
+                    Image.asset('assets/iconHelpCopy2.png'),
                     Container(margin: EdgeInsets.fromLTRB(8, 0, 0, 0)),
                     Text("오늘의 단어",
                         style: TextStyle(
@@ -475,7 +505,7 @@ void showEx(BuildContext context) {
                         onPressed: () {
                           Navigator.of(context).pop();
                         },
-                        icon: Image.asset('close.png')),
+                        icon: Image.asset('assets/close.png')),
                   ],
                 ),
               ],
@@ -509,8 +539,8 @@ void showEx(BuildContext context) {
                 children: [
                   Container(
                     constraints: BoxConstraints(
-                      minWidth: 318,
-                      minHeight: 54,
+                      minWidth: 200,
+                      minHeight: 50,
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(8)),
