@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:s2longapp/common/CommonBottomBtn.dart';
+import 'package:s2longapp/features/common/CommonBottomBtn.dart';
 
 String finalEmail = '';
 

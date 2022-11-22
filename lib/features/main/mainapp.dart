@@ -1,40 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:s2longapp/features/navi/menu.dart';
+import '../common/CommonAppBar.dart';
 import 'package:http/http.dart' as http;
-import 'package:s2longapp/common/CommonAppBar.dart';
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'dart:developer';
-import 'package:s2longapp/features/navi/menu.dart';
+
+import '../test/wordtest.dart';
+import '../test/spellingtest.dart';
+import '../listen/Listen.dart';
+import '../wordbook/wordbook.dart';
 
 String finalEmail = '';
 String finalRe = '';
 
-// String finalWordLen = '0';
-
 const baseApiUrl = String.fromEnvironment('BASE_URL');
 
-class MainappPage extends StatefulWidget {
-  const MainappPage({Key? key}) : super(key: key);
+class MainAppPage extends StatefulWidget {
+  const MainAppPage({Key? key}) : super(key: key);
 
   static Route route() {
-    return MaterialPageRoute<void>(builder: (_) => MainappPage());
+    return MaterialPageRoute<void>(builder: (_) => MainAppPage());
   }
 
   @override
-  State<MainappPage> createState() => _MainappPageState();
+  State<MainAppPage> createState() => _MainAppPage();
 }
 
-class _MainappPageState extends State<MainappPage> {
+class _MainAppPage extends State<MainAppPage> {
   int _selectedIndex = 0;
 
   int mylibIndex = 0;
-  // final List<Widget> pageList = <Widget>[
-  //   HomePage(),
-  //   EBookPage(),
-  //   MclubPage(),
-  //   Store()
-  // ];
 
   @override
   void initState() {
@@ -43,16 +39,6 @@ class _MainappPageState extends State<MainappPage> {
 
     // "ref"는 StatefulWidget의 모든 생명주기 상에서 사용할 수 있습니다.
   }
-
-  // Future getWordBookLength() async {
-  //   var url =
-  //       Uri.parse("http://${baseApiUrl}/wordbook/getwordlength/${finalEmail}");
-  //   http.Response res = await http.get(url);
-  //   setState(() {
-  //     finalWordLen = res.body;
-  //   });
-  //   return res.body;
-  // }
 
   Future getValidationData() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -65,6 +51,12 @@ class _MainappPageState extends State<MainappPage> {
 
   final FlutterTts tts = FlutterTts();
   final TextEditingController controller = TextEditingController(text: '');
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -81,6 +73,7 @@ class _MainappPageState extends State<MainappPage> {
               backgroundColor: Color.fromRGBO(56, 8, 135, 1.0),
               key: null,
             ),
+            drawer: MenuBar(),
             body: Column(
               children: [
                 Stack(
@@ -210,6 +203,10 @@ class _MainappPageState extends State<MainappPage> {
                                     Container(
                                       child: IconButton(
                                           onPressed: () {
+                                            // setState(() {
+                                            //   _selectedIndex = 1;
+                                            // });
+                                            // GoRouter.of(context).go('/EBook');
                                             Navigator.pushNamed(
                                                 context, '/wordtest');
                                           },
@@ -251,6 +248,9 @@ class _MainappPageState extends State<MainappPage> {
                                     Container(
                                       child: IconButton(
                                           onPressed: () {
+                                            // setState(() {
+                                            //   _selectedIndex = 1;
+                                            // });
                                             Navigator.pushNamed(
                                                 context, '/spellingtest');
                                           },
@@ -297,6 +297,9 @@ class _MainappPageState extends State<MainappPage> {
                                     Container(
                                       child: IconButton(
                                           onPressed: () {
+                                            // setState(() {
+                                            //   _selectedIndex = 2;
+                                            // });
                                             Navigator.pushNamed(
                                                 context, '/listen');
                                           },
@@ -394,6 +397,9 @@ class _MainappPageState extends State<MainappPage> {
                                     Container(
                                       child: IconButton(
                                           onPressed: () {
+                                            // setState(() {
+                                            //   _selectedIndex = 3;
+                                            // });
                                             Navigator.pushNamed(
                                                 context, '/wordbook');
                                           },
@@ -403,36 +409,6 @@ class _MainappPageState extends State<MainappPage> {
                                   ],
                                 ),
                               ),
-
-                              ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                    primary: Color.fromRGBO(56, 8, 135, 1.0),
-                                    minimumSize: Size(200, 40),
-                                  ),
-                                  // style: ButtonStyle(
-                                  //   foregroundColor:
-                                  //       MaterialStateProperty.all<
-                                  //           Color>(
-                                  //     Color.fromRGBO(56, 8, 135, 1.0),
-                                  //   ),
-                                  //   backgroundColor:
-                                  //       MaterialStateProperty.all<
-                                  //           Color>(
-                                  //     Color.fromRGBO(56, 8, 135, 1.0),
-                                  //   ),
-                                  // ),
-                                  onPressed: () {
-                                    Navigator.pushNamed(
-                                        context, '/wordbooktest');
-                                  },
-                                  child: Text(
-                                    '오답 시험',
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                      color: Color.fromRGBO(255, 255, 255, 1.0),
-                                    ),
-                                  ))
                               // CommonMdeckCard(text: "영어독립 365영어독립 365..."),
                             ],
                           )),
@@ -442,127 +418,15 @@ class _MainappPageState extends State<MainappPage> {
               ],
             ),
           ),
+          WordTestPage(),
+          SpellingTest(),
+          ListenPage(),
+          WordBookPage(),
         ],
       ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   currentIndex: _selectedIndex,
-      //   onTap: _onItemTapped,
-      //   backgroundColor: Color.fromRGBO(56, 8, 135, 1.0),
-      //   type: BottomNavigationBarType.fixed,
-      //   showSelectedLabels: false,
-      //   showUnselectedLabels: false,
-      //   items: <BottomNavigationBarItem>[
-      //     BottomNavigationBarItem(
-      //         activeIcon: Container(
-      //           width: 48,
-      //           height: 48,
-      //           decoration: BoxDecoration(
-      //               image: DecorationImage(
-      //                   image: AssetImage("assets/iconHome.png")),
-      //               color: Color.fromRGBO(255, 255, 255, 1.0),
-      //               borderRadius: BorderRadius.circular(18)),
-      //         ),
-      //         icon: Image.asset(
-      //           "assets/iconHomeDis.png",
-      //         ),
-      //         label: ""),
-      //     BottomNavigationBarItem(
-      //         activeIcon: Container(
-      //           width: 48,
-      //           height: 48,
-      //           decoration: BoxDecoration(
-      //               image: DecorationImage(
-      //                   image: AssetImage("assets/iconLibrary.png")),
-      //               color: Color.fromRGBO(255, 255, 255, 1.0),
-      //               borderRadius: BorderRadius.circular(18)),
-      //         ),
-      //         icon: Image.asset("assets/iconLibraryDis.png"),
-      //         label: ""),
-      //     BottomNavigationBarItem(
-      //         activeIcon: Container(
-      //           width: 48,
-      //           height: 48,
-      //           decoration: BoxDecoration(
-      //               image: DecorationImage(
-      //                   image: AssetImage("assets/iconClub.png")),
-      //               color: Color.fromRGBO(255, 255, 255, 1.0),
-      //               borderRadius: BorderRadius.circular(18)),
-      //         ),
-      //         icon: Image.asset("assets/iconClubDis.png"),
-      //         label: ""),
-      //     BottomNavigationBarItem(
-      //         activeIcon: Container(
-      //           width: 48,
-      //           height: 48,
-      //           decoration: BoxDecoration(
-      //               image: DecorationImage(
-      //                   image: AssetImage("assets/iconStore.png")),
-      //               color: Color.fromRGBO(255, 255, 255, 1.0),
-      //               borderRadius: BorderRadius.circular(18)),
-      //         ),
-      //         icon: Image.asset("assets/iconStoreDis.png"),
-      //         label: ""),
-      //   ],
-      // )
     );
   }
 }
-
-// void main() {
-//   runApp(Testtts());
-// }
-
-// class Testtts extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: 'Flutter Demo',
-//       theme: ThemeData(
-//         primarySwatch: Colors.blue,
-//       ),
-//       debugShowCheckedModeBanner: false,
-//       home: Home(),
-//     );
-//   }
-// // }
-
-// class Home extends StatelessWidget {
-//   // var speed;
-
-//   final FlutterTts tts = FlutterTts();
-//   final TextEditingController controller =
-//       TextEditingController(text: '속도를 클릭하시고 ,변환할 영어 단어 , 구문을 입력하세요.');
-
-//   Home() {
-//     tts.setLanguage('en');
-//     tts.setSpeechRate(1.0);
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Padding(
-//         padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: [
-//             TextField(
-//               controller: controller,
-//             ),
-//             Container(
-//               margin: EdgeInsets.all(10),
-//             ),
-//             ElevatedButton(
-//                 onPressed: () {
-//                   tts.speak(controller.text);
-//                 },
-//                 child: Text('변환'))
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
 
 // 모달 팝업
 void showEx(BuildContext context) {

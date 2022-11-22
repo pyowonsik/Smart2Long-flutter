@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:s2longapp/common/CommonTextInput.dart';
+import 'package:s2longapp/features/common/CommonBottomBtn.dart';
 
 class CommonProblem extends StatelessWidget {
   const CommonProblem({Key? key, required this.text}) : super(key: key);

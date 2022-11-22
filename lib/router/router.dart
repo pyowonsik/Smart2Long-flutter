@@ -11,7 +11,7 @@ import 'package:s2longapp/features/wordbook/wordbooktest.dart';
 
 final router = {
   '/': (BuildContext context) => SignInPage(),
-  '/mainapp': (BuildContext context) => MainappPage(),
+  '/mainapp': (BuildContext context) => MainAppPage(),
   '/wordtest': (BuildContext context) => WordTestPage(),
   '/spellingtest': (BuildContext context) => SpellingTest(),
   '/listen': (BuildContext context) => ListenPage(),

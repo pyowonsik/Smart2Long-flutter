@@ -3,7 +3,8 @@ import 'package:http/http.dart' as http;
 import 'package:s2longapp/features/wordbook/Words.dart';
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:s2longapp/common/CommonAppBar.dart';
+import 'package:s2longapp/features/common/CommonAppBar.dart';
+import 'package:s2longapp/features/navi/menu.dart';
 
 const baseApiUrl = String.fromEnvironment('BASE_URL');
 String finalEmail = '';
@@ -34,7 +35,6 @@ class _WordBookState extends State<WordBookPage> {
     for (var jsonData in urjson) {
       wordlist.add(Words.fromJson(jsonData));
     }
-
     return wordlist;
   }
 
@@ -68,6 +68,7 @@ class _WordBookState extends State<WordBookPage> {
         // backgroundColor: const Color.fromRGBO(175, 180, 185, 1.0),
         key: null,
       ),
+      drawer: MenuBar(),
 
       // return Dismissible(
       //             key: Key(items[index]),
@@ -116,10 +117,10 @@ class _WordBookState extends State<WordBookPage> {
                   Map<String, dynamic> jsonData = jsonDecode(res.body);
                   print(jsonData);
                   // Map<String, dynamic>jsonData = jsonDecode(res.body);
-                  print(jsonData['word']); // bebe 출력d
-                  print(jsonData['ex']); //
+                  print(jsonData["word"]); // bebe 출력d
+                  print(jsonData["ex"]); //
                   setState(() {
-                    finalEx = jsonData['ex'];
+                    finalEx = jsonData["ex"];
                   });
                   print(finalEx);
                   showEx(context);

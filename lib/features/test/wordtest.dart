@@ -4,7 +4,9 @@ import 'package:go_router/go_router.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'dart:convert';
-import 'package:s2longapp/common/CommonAppBar.dart';
+import 'package:s2longapp/features/common/CommonAppBar.dart';
+
+import 'package:s2longapp/features/navi/menu.dart';
 
 const baseApiUrl = String.fromEnvironment('BASE_URL');
 String finalScore = '';
@@ -212,6 +214,7 @@ class _WordTestState extends State<WordTestPage> {
         // backgroundColor: const Color.fromRGBO(175, 180, 185, 1.0),
         key: null,
       ),
+      drawer: MenuBar(),
       body: SingleChildScrollView(
         child: Padding(
             padding: const EdgeInsets.all(16.0),

@@ -21,7 +21,6 @@ class GrayBlueAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0,
       leading: IconButton(
         onPressed: () {
-          // GoRouter.of(context).pop();
           Navigator.pop(context);
         },
         color: Colors.white,
@@ -60,7 +59,6 @@ class EbookAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0,
       leading: IconButton(
         onPressed: () {
-          // GoRouter.of(context).pop();
           Navigator.pop(context);
         },
         color: Colors.white,
@@ -75,7 +73,6 @@ class EbookAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: <Widget>[
         IconButton(
           onPressed: () {
-            // GoRouter.of(context).push('/main');
             Navigator.pop(context);
           },
           icon: Image.asset("assets/iconSearch.png"),
@@ -132,7 +129,6 @@ class BlueMenuAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: <Widget>[
         IconButton(
           onPressed: () {
-            // GoRouter.of(context).push('/main');
             Navigator.pop(context);
           },
           icon: Image.asset("assets/iconSearch.png"),
@@ -163,7 +159,6 @@ class GrayLogoAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0,
       leading: IconButton(
         onPressed: () {
-          // GoRouter.of(context).pop();
           Navigator.pop(context);
         },
         color: Colors.white,
@@ -210,7 +205,6 @@ class BlueLogoAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: <Widget>[
         IconButton(
           onPressed: () {
-            // GoRouter.of(context).push('main');
             Navigator.pop(context);
           },
           icon: Image.asset("assets/iconSearch.png"),

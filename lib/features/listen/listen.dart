@@ -4,7 +4,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
-import 'package:s2longapp/common/CommonAppBar.dart';
+import 'package:s2longapp/features/common/CommonAppBar.dart';
+
+import 'package:s2longapp/features/navi/menu.dart';
 
 String finalEmail = '';
 String finalText = "";
@@ -58,6 +60,7 @@ class _ListenPageState extends State<ListenPage> {
         // backgroundColor: const Color.fromRGBO(175, 180, 185, 1.0),
         key: null,
       ),
+      drawer: MenuBar(),
       body: Column(
         children: [
           Stack(
