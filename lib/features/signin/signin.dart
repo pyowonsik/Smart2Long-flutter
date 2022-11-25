@@ -79,32 +79,32 @@ class SignInPage extends StatelessWidget {
                   SignInForm2(),
                   Container(margin: EdgeInsets.fromLTRB(0, 22, 0, 0)),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Container(
-                            margin: EdgeInsets.fromLTRB(11, 0, 0, 0),
-                          ),
-                          Checkbox(
-                            value: false,
-                            onChanged: (value) {
-                              //    setState(() {
-                              //     value = true;
-                              //    });
-                            },
-                            side: BorderSide(
-                              color: Colors.indigo,
-                              width: 2,
-                            ),
-                          ),
-                          Text('자동 로그인',
-                              style: TextStyle(
-                                fontSize: 16,
-                              )),
-                        ],
-                      ),
+                      // Row(
+                      //   mainAxisAlignment: MainAxisAlignment.start,
+                      //   children: [
+                      //     Container(
+                      //       margin: EdgeInsets.fromLTRB(11, 0, 0, 0),
+                      //     ),
+                      //     Checkbox(
+                      //       value: false,
+                      //       onChanged: (value) {
+                      //         //    setState(() {
+                      //         //     value = true;
+                      //         //    });
+                      //       },
+                      //       side: BorderSide(
+                      //         color: Colors.indigo,
+                      //         width: 2,
+                      //       ),
+                      //     ),
+                      //     Text('자동 로그인',
+                      //         style: TextStyle(
+                      //           fontSize: 16,
+                      //         )),
+                      //   ],
+                      // ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
@@ -119,7 +119,9 @@ class SignInPage extends StatelessWidget {
                           IconButton(
                             icon: Image.asset('assets/iconChevronRCopy3.png'),
                             onPressed: () {
-                              GoRouter.of(context).push('/findid');
+                              // GoRouter.of(context).push('/findid');
+
+                              Navigator.pushNamed(context, '/findid');
                               print("find id test");
                             },
                           )
@@ -141,17 +143,19 @@ class SignInPage extends StatelessWidget {
                       IconButton(
                         icon: Image.asset('assets/iconChevronRCopy3.png'),
                         onPressed: () {
-                          GoRouter.of(context).push('/findpassword');
+                          // GoRouter.of(context).push('/findpassword');
+
+                          Navigator.pushNamed(context, '/findpw');
                           print("find password test");
                         },
                       )
                     ],
                   ),
-                  Container(
-                    height: 1,
-                    margin: EdgeInsets.fromLTRB(0, 31, 0, 32),
-                    color: Color(0xffe5e7e9),
-                  ),
+                  // Container(
+                  //   height: 1,
+                  //   margin: EdgeInsets.fromLTRB(0, 31, 0, 32),
+                  //   color: Color(0xffe5e7e9),
+                  // ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [

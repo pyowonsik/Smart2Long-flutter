@@ -11,6 +11,7 @@ import '../test/spellingtest.dart';
 import '../listen/Listen.dart';
 import '../wordbook/wordbook.dart';
 
+// wordbook length 를 db에서 가져와서 50개 이하 일때만 시험 보기 가능
 String finalEmail = '';
 String finalRe = '';
 

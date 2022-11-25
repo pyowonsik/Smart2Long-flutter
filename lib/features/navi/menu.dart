@@ -99,7 +99,7 @@ class _MenuBarState extends State<MenuBar> {
                 ),
               ),
               onTap: () {
-                GoRouter.of(context).push('/myinfo');
+                Navigator.pushNamed(context, '/myinfo');
               },
             ),
             ListTile(
@@ -116,7 +116,8 @@ class _MenuBarState extends State<MenuBar> {
                 ),
               ),
               onTap: () {
-                GoRouter.of(context).push('/setting');
+                Navigator.pushNamed(context, '/setting');
+                ;
               },
             ),
             ListTile(
@@ -133,7 +134,7 @@ class _MenuBarState extends State<MenuBar> {
                 ),
               ),
               onTap: () {
-                GoRouter.of(context).push('/notice');
+                Navigator.pushNamed(context, '/notice');
               },
             ),
             ListTile(
@@ -150,7 +151,7 @@ class _MenuBarState extends State<MenuBar> {
                 ),
               ),
               onTap: () {
-                GoRouter.of(context).push('/event');
+                Navigator.pushNamed(context, '/event');
               },
             ),
             ListTile(
@@ -167,7 +168,7 @@ class _MenuBarState extends State<MenuBar> {
                 ),
               ),
               onTap: () {
-                GoRouter.of(context).push('/guide');
+                Navigator.pushNamed(context, '/guide');
               },
             ),
             ListTile()

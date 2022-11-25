@@ -131,7 +131,7 @@ class BlueMenuAppBar extends StatelessWidget implements PreferredSizeWidget {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Image.asset("assets/iconSearch.png"),
+          icon: Image.asset("assets/iconRe.png"),
         )
       ],
     );
@@ -205,9 +205,10 @@ class BlueLogoAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: <Widget>[
         IconButton(
           onPressed: () {
-            Navigator.pop(context);
+            // Navigator.pop(context);
+            Navigator.pushNamed(context, '/main');
           },
-          icon: Image.asset("assets/iconSearch.png"),
+          icon: Image.asset("assets/iconRe.png"),
         )
       ],
     );

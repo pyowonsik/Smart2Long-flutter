@@ -261,7 +261,7 @@ class _WordTestState extends State<WordTestPage> {
                                             AssetImage("assets/layer14.png")),
                                   ),
                                   Container(
-                                    width: 200,
+                                    width: 190,
                                     child: Text(
                                       begginer +
                                           "  (총 단어 개수 : " +
@@ -315,7 +315,7 @@ class _WordTestState extends State<WordTestPage> {
                                             AssetImage("assets/layer14.png")),
                                   ),
                                   Container(
-                                    width: 200,
+                                    width: 190,
                                     child: Text(
                                       middler +
                                           "  (총 단어 개수 : " +
@@ -369,7 +369,7 @@ class _WordTestState extends State<WordTestPage> {
                                             AssetImage("assets/layer14.png")),
                                   ),
                                   Container(
-                                    width: 200,
+                                    width: 190,
                                     child: Text(
                                       higher +
                                           "  (총 단어 개수 : " +
@@ -423,7 +423,7 @@ class _WordTestState extends State<WordTestPage> {
                                             AssetImage("assets/layer14.png")),
                                   ),
                                   Container(
-                                    width: 200,
+                                    width: 190,
                                     child: Text(
                                       toiecer +
                                           "  (총 단어 개수 : " +
