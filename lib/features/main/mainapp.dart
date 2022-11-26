@@ -12,7 +12,9 @@ import '../listen/Listen.dart';
 import '../wordbook/wordbook.dart';
 
 // wordbook length 를 db에서 가져와서 50개 이하 일때만 시험 보기 가능
-String finalEmail = '';
+
+String getWordNum = '0';
+String finalEmail = 'abc@abc.com';
 String finalRe = '';
 
 const baseApiUrl = String.fromEnvironment('BASE_URL');
@@ -36,6 +38,7 @@ class _MainAppPage extends State<MainAppPage> {
   @override
   void initState() {
     getValidationData();
+    getWordNumber();
     super.initState();
 
     // "ref"는 StatefulWidget의 모든 생명주기 상에서 사용할 수 있습니다.
@@ -48,6 +51,17 @@ class _MainAppPage extends State<MainAppPage> {
       finalEmail = email;
     });
     print(finalEmail);
+  }
+
+  Future getWordNumber() async {
+    var url =
+        Uri.parse("http://${baseApiUrl}/wordbook/getwordnum/${finalEmail}");
+    http.Response res = await http.get(url);
+    print(res.body);
+    setState(() {
+      getWordNum = res.body;
+    });
+    return res.body;
   }
 
   final FlutterTts tts = FlutterTts();
@@ -192,7 +206,7 @@ class _MainAppPage extends State<MainAppPage> {
                                           margin:
                                               EdgeInsets.fromLTRB(7, 0, 0, 0),
                                           child: Text(
-                                            "영어 단어 시험",
+                                            getWordNum + "영어 단어 시험",
                                             style: TextStyle(
                                                 color: Color.fromRGBO(
                                                     46, 10, 106, 1.0),
@@ -204,12 +218,12 @@ class _MainAppPage extends State<MainAppPage> {
                                     Container(
                                       child: IconButton(
                                           onPressed: () {
-                                            // setState(() {
-                                            //   _selectedIndex = 1;
-                                            // });
-                                            // GoRouter.of(context).go('/EBook');
-                                            Navigator.pushNamed(
-                                                context, '/wordtest');
+                                            if (int.parse(getWordNum) < 30)
+                                              Navigator.pushNamed(
+                                                  context, '/wordtest');
+                                            else {
+                                              wordNumModal(context);
+                                            }
                                           },
                                           icon: Image.asset(
                                               'assets/iconChevronR.png')),
@@ -237,7 +251,7 @@ class _MainAppPage extends State<MainAppPage> {
                                           margin:
                                               EdgeInsets.fromLTRB(7, 0, 0, 0),
                                           child: Text(
-                                            "영어 스펠링 시험",
+                                            getWordNum + "영어 스펠링 시험",
                                             style: TextStyle(
                                                 color: Color.fromRGBO(
                                                     46, 10, 106, 1.0),
@@ -249,11 +263,12 @@ class _MainAppPage extends State<MainAppPage> {
                                     Container(
                                       child: IconButton(
                                           onPressed: () {
-                                            // setState(() {
-                                            //   _selectedIndex = 1;
-                                            // });
-                                            Navigator.pushNamed(
-                                                context, '/spellingtest');
+                                            if (int.parse(getWordNum) < 30)
+                                              Navigator.pushNamed(
+                                                  context, '/spellingtest');
+                                            else {
+                                              wordNumModal(context);
+                                            }
                                           },
                                           icon: Image.asset(
                                               'assets/iconChevronR.png')),
@@ -516,6 +531,109 @@ void showEx(BuildContext context) {
                       )),
                 ],
               )),
+          actions: [
+            Container(
+              constraints: BoxConstraints(
+                minWidth: 358,
+              ),
+              padding: EdgeInsets.fromLTRB(0, 0, 0, 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    constraints: BoxConstraints(
+                      minWidth: 200,
+                      minHeight: 50,
+                    ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(8)),
+                      color: Color(0xff380887),
+                    ),
+                    child: TextButton(
+                      child: Text('확인',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                          )),
+                      onPressed: () {
+                        print('modal test');
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        );
+      });
+}
+
+// 모달 팝업
+void wordNumModal(BuildContext context) {
+  showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext ctx) {
+        return AlertDialog(
+          titlePadding: EdgeInsets.zero,
+          contentPadding: EdgeInsets.zero,
+          actionsPadding: EdgeInsets.zero,
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(8.0))),
+          title: Container(
+            constraints: BoxConstraints(
+              minWidth: 358,
+            ),
+            padding: EdgeInsets.fromLTRB(20, 22, 20, 22),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(8),
+                topRight: Radius.circular(8),
+              ),
+              color: Color(0xffaf97d7),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Image.asset('assets/iconHelpCopy2.png'),
+                    Container(margin: EdgeInsets.fromLTRB(8, 0, 0, 0)),
+                    Text('시험 불가',
+                        style: TextStyle(
+                          fontSize: 18,
+                          letterSpacing: -0.45,
+                          color: Color(0xff380887),
+                        )),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    IconButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        icon: Image.asset('assets/close.png')),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          content: Container(
+            constraints: BoxConstraints(
+              minWidth: 358,
+            ),
+            padding: EdgeInsets.fromLTRB(19, 16, 17, 24),
+            color: Colors.white,
+            child: Text("단어장 단어가 30개 이하 일때만 새로운 시험이 가능합니다. 단어장을 비우고 오세요. ",
+                style: TextStyle(
+                  fontSize: 18,
+                  letterSpacing: -0.45,
+                )),
+          ),
           actions: [
             Container(
               constraints: BoxConstraints(

@@ -379,7 +379,8 @@ class GrayBlueAppBar extends StatelessWidget implements PreferredSizeWidget {
           X = 0;
           beforePage = 0;
           // GoRouter.of(context).go('/main');
-          Navigator.pop(context);
+          // Navigator.pop(context);
+          Navigator.pushNamed(context, '/mainapp');
         },
         color: Colors.white,
         icon: Image.asset("assets/iconArrowBackCopy2.png"),
@@ -499,7 +500,8 @@ void showEx(BuildContext context) {
                           )),
                       onPressed: () async {
                         finalMean = '다음을 누르시면 문제가 시작됩니다.';
-                        GoRouter.of(context).go('/ebook');
+                        // GoRouter.of(context).go('/ebook');
+                        Navigator.pushNamed(context, '/mainapp');
                       },
                     ),
                   ),

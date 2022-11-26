@@ -636,7 +636,8 @@ void showEx(BuildContext context) {
                           )),
                       onPressed: () async {
                         finalWord = '다음을 누르시면 문제가 시작됩니다.';
-                        GoRouter.of(context).go('/ebook');
+                        // GoRouter.of(context).go('/ebook');
+                        Navigator.pushNamed(context, '/wordtest');
                       },
                     ),
                   ),
