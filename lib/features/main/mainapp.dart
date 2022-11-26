@@ -14,7 +14,7 @@ import '../wordbook/wordbook.dart';
 // wordbook length 를 db에서 가져와서 50개 이하 일때만 시험 보기 가능
 
 String getWordNum = '0';
-String finalEmail = 'abc@abc.com';
+String finalEmail = '';
 String finalRe = '';
 
 const baseApiUrl = String.fromEnvironment('BASE_URL');
@@ -38,7 +38,7 @@ class _MainAppPage extends State<MainAppPage> {
   @override
   void initState() {
     getValidationData();
-    getWordNumber();
+    // getWordNumber();
     super.initState();
 
     // "ref"는 StatefulWidget의 모든 생명주기 상에서 사용할 수 있습니다.
@@ -50,10 +50,6 @@ class _MainAppPage extends State<MainAppPage> {
     setState(() {
       finalEmail = email;
     });
-    print(finalEmail);
-  }
-
-  Future getWordNumber() async {
     var url =
         Uri.parse("http://${baseApiUrl}/wordbook/getwordnum/${finalEmail}");
     http.Response res = await http.get(url);
@@ -63,6 +59,17 @@ class _MainAppPage extends State<MainAppPage> {
     });
     return res.body;
   }
+
+  // Future getWordNumber() async {
+  //   var url =
+  //       Uri.parse("http://${baseApiUrl}/wordbook/getwordnum/${finalEmail}");
+  //   http.Response res = await http.get(url);
+  //   print(res.body);
+  //   setState(() {
+  //     getWordNum = res.body;
+  //   });
+  //   return res.body;
+  // }
 
   final FlutterTts tts = FlutterTts();
   final TextEditingController controller = TextEditingController(text: '');
@@ -206,7 +213,7 @@ class _MainAppPage extends State<MainAppPage> {
                                           margin:
                                               EdgeInsets.fromLTRB(7, 0, 0, 0),
                                           child: Text(
-                                            getWordNum + "영어 단어 시험",
+                                            "영어 단어 시험",
                                             style: TextStyle(
                                                 color: Color.fromRGBO(
                                                     46, 10, 106, 1.0),
@@ -251,7 +258,7 @@ class _MainAppPage extends State<MainAppPage> {
                                           margin:
                                               EdgeInsets.fromLTRB(7, 0, 0, 0),
                                           child: Text(
-                                            getWordNum + "영어 스펠링 시험",
+                                            "영어 스펠링 시험",
                                             style: TextStyle(
                                                 color: Color.fromRGBO(
                                                     46, 10, 106, 1.0),
@@ -388,7 +395,7 @@ class _MainAppPage extends State<MainAppPage> {
                                           margin:
                                               EdgeInsets.fromLTRB(7, 0, 0, 0),
                                           child: Text(
-                                            "단어장",
+                                            "단어장(" + getWordNum + ")",
                                             style: TextStyle(
                                                 color: Color.fromRGBO(
                                                     46, 10, 106, 1.0),
