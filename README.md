@@ -1,4 +1,4 @@
-# s2longapp
+# Smart2Long-flutter
 
 A new Flutter project.
 
