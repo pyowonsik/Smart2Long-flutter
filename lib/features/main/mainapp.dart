@@ -38,7 +38,6 @@ class _MainAppPage extends State<MainAppPage> {
   @override
   void initState() {
     getValidationData();
-    // getWordNumber();
     super.initState();
 
     // "ref"는 StatefulWidget의 모든 생명주기 상에서 사용할 수 있습니다.
@@ -59,17 +58,6 @@ class _MainAppPage extends State<MainAppPage> {
     });
     return res.body;
   }
-
-  // Future getWordNumber() async {
-  //   var url =
-  //       Uri.parse("http://${baseApiUrl}/wordbook/getwordnum/${finalEmail}");
-  //   http.Response res = await http.get(url);
-  //   print(res.body);
-  //   setState(() {
-  //     getWordNum = res.body;
-  //   });
-  //   return res.body;
-  // }
 
   final FlutterTts tts = FlutterTts();
   final TextEditingController controller = TextEditingController(text: '');

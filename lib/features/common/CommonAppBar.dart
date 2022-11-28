@@ -200,7 +200,7 @@ class BlueLogoAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       centerTitle: center,
-      title: Image.asset("assets/s2Long_color.png"),
+      // title: Image.asset("assets/s2Long_color.png"),
       backgroundColor: backgroundColor,
       actions: <Widget>[
         IconButton(

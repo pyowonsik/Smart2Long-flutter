@@ -55,7 +55,7 @@ class SignInPage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset('assets/vectorSmartObject.png'),
+                  // Image.asset('assets/vectorSmartObject.png'),
                   Container(
                     margin: EdgeInsets.fromLTRB(0, 79, 0, 0),
                   ),

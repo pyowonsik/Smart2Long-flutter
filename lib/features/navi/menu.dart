@@ -58,7 +58,7 @@ class _MenuBarState extends State<MenuBar> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Image.asset("assets/s2Long_color.png"),
+                        // Image.asset("assets/s2Long_color.png"),
                         IconButton(
                             padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
                             onPressed: () {
